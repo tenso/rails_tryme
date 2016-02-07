@@ -1,19 +1,21 @@
 <% if user_file.id %>
-<p>
-    <strong>Name</strong>
-    <%= user_file.name %>
-</p>
-<p>
-    <strong>Comment</strong>
-    <%=  user_file.comment %>
-</p>
-<p>
-    <strong>Data</strong>
-    <%=  user_file.data %>
-</p>
-
-<%= link_to 'Delete', [user_file.user, user_file],
-    method: :delete,
-    data: {confirm: "Delete file?"} %>
-<hr>
-<% end %>
+<div class="fileBox">
+    <p>
+        <strong>Name</strong><br>
+        <%= user_file.name %>
+    </p>
+    <p>
+        <strong>Comment</strong><br>
+        <%=  user_file.comment %>
+    </p>
+    <p>
+        <strong>Data</strong><br>
+        <%=  user_file.data %>
+    </p>
+    <% if action_name == "edit" %>
+        <%= link_to 'Delete file', [user_file.user, user_file],
+            method: :delete,
+            data: {confirm: "Delete file?"} %>
+        <% end %>
+    <% end %>
+</div>

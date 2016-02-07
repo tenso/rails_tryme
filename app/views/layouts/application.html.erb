@@ -7,8 +7,17 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+    <header>
+        SyntheSound
+    </header>
+    <nav id="mainNav">
+        <%= link_to "Home", controller: :welcome, action: :index %>
+        <%= link_to 'Users', users_path %>
+        <%= link_to 'About', controller: :pages, action: :about%>
+        <%= link_to 'Help', controller: :pages, action: :help%>
+    </nav>
+    <main class="mainContent">
+        <%= yield %>
+    </main>
 </body>
 </html>
