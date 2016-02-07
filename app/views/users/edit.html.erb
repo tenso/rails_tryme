@@ -1,0 +1,10 @@
+<h1>Edit user</h1>
+
+<%= render 'form' %>
+
+<h2>Add file</h2>
+<%= render 'user_files/form' %>
+
+<h2>Files</h2>
+<%= render @user.user_files %>
+<%= link_to 'Back', users_path %>

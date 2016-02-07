@@ -1,0 +1,16 @@
+<h1>User</h1>
+<p>
+    <strong>Name:</strong>
+    <%= @user.name %>
+</p>
+
+<p>
+    <strong>E-mail:</strong>
+    <%= @user.email %>
+</p>
+
+<h2>Files</h2>
+<%= render @user.user_files %>
+
+<%= link_to 'Back', users_path %>
+<%= link_to 'Edit', edit_user_path(@user) %>
